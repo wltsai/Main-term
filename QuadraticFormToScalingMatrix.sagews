@@ -1,4 +1,4 @@
-# the function "Formtoscaling" is related to the quadratic form [a,b,c] and the corresponding scaling matrix (Gamma_0(6)) which is given by M. Dewar and R. Murty, "A derivation of the Hardy-Ramanujan formula from an arithmetic formula", Proc. Amer. Math. Soc., 141 (2012), 1903-1911.
+# the function "Formtoscaling" is related to the quadratic form [a,b,c] and the corresponding scaling matrix (Gamma_0(6)) that is given by M. Dewar and R. Murty, "A derivation of the Hardy-Ramanujan formula from an arithmetic formula", Proc. Amer. Math. Soc., 141 (2012), 1903-1911.
 
 r_Infinity = matrix(ZZ, 2, [[1,0],[0,1]])
 def r3(r): return matrix(ZZ, 2, [[1,0],[3,1]])*matrix(ZZ, 2, [[1,r],[0,1]]) # r=0,1
