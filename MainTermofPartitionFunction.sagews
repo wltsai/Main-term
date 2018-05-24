@@ -1,4 +1,4 @@
-# The function "PMAIN(n)" is the main term appearing our main theorem.
+# The function "PMAIN(n)" is the main term appearing in our main theorem.
 
 def e(z): return exp(2*pi*I*z)
 def CM(a,b,c): return -b/(2*a)+(sqrt(b^2-4*a*c))/(2*a)
