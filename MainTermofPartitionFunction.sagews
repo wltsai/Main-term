@@ -1,4 +1,3 @@
-︠7e06ca3b-fbe0-40e9-bdca-41993b1ea61e︠
 # The function "PMAIN(n)" is the main term appearing our main theorem.
 
 def e(z): return exp(2*pi*I*z)
