@@ -1,4 +1,4 @@
-︠# The function "PMAIN(n)" is the main term appearing our main theorem.
+︠# The function "PMAIN(n)" is the main term appearing in our main theorem.
 
 def PMAIN(n): return (2*pi*((24*n-1)^(-1))*(sum(Ep(sqrt(u))*PINNER(n,u) for u in divisors(24*n-1) if u.is_square()) )).n(digits=90) # 90 digits
 
