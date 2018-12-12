@@ -1,4 +1,3 @@
-︠c3ea7212-e0c2-463a-99ba-98b14c3acc4f︠
 # The function "LPMAIN(n)" is the Lehmer's main term by taking N = Hurwitz class number H(24*n-1) that is given by D. H. Lehmer, "On the remainders and convergence of the series for the partition function", Trans. Amer. Math. Soc., 46:362–373, 1939.
 
 def e(z): return exp(2*pi*I*z)
