@@ -35,7 +35,10 @@ def Formtoscaling(a,b,c):
 
 
 
+Formtoscaling(6,1,2) # Example for [a,b,c]=[6,1,2].
 
+[1 0]
+[0 1]
 
 
 
