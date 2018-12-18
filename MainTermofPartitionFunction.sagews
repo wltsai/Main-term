@@ -3,7 +3,7 @@
 def e(z): return exp(2*pi*I*z)
 def CM(a,b,c): return -b/(2*a)+(sqrt(b^2-4*a*c))/(2*a)
 def Form(n): return BinaryQF_reduced_representatives(n, primitive_only=True)
-def Innerbesselsum(a,b,x,n,w): return x/(sqrt(2*a*w))*e(b/(2*a*w))*bessel_I(3/2, (pi*sqrt(n))/(a*w))
+
 
 r_Infinity = matrix(ZZ, 2, [[1,0],[0,1]])
 def r3(r): return matrix(ZZ, 2, [[1,0],[3,1]])*matrix(ZZ, 2, [[1,r],[0,1]]) # r=0,1
@@ -73,21 +73,22 @@ def Ep(n):
 
 
 
-def PINNER(n,u): return ((24*n-1)/u)^(1/4)*sum( Innerbesselsum( Form((1-24*n)/u)[i][0] , Form((1-24*n)/u)[i][1], Zeta(Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[0],Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[1]),(24*n-1)/u, Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[1] ) for i in (0..len(Form((1-24*n)/u))-1))
+def PINNER(n,u): return  sum( e(-1/(Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[1])*CM(Form((1-24*n)/u)[i][0] , Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2]))*Zeta(Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[0],Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[1])*(1-1/(2*pi)*(2*(Form((1-24*n)/u)[i][0])*sqrt(u)/(sqrt(24*n-1)))*Width(Form((1-24*n)/u)[i][0],Form((1-24*n)/u)[i][1],Form((1-24*n)/u)[i][2])[1]) for i in (0..len(Form((1-24*n)/u))-1))
 
 
 def PMAIN(n): return (2*pi*((24*n-1)^(-1))*(sum(Ep(sqrt(u))*PINNER(n,u) for u in divisors(24*n-1) if u.is_square()) )).n(digits=90) # 90 digits
 
 PMAIN(50) # Example for n = 50.
 
-204226.014644736855230387266050473350821324455600994647831454362676477205968246798650681414 + 0.0485221191485643572100253698932548947893122683465239126197976234121803343500578646516168863*I
+204226.015614912156488493437751423786894974139650800321020871915541968108471339213273166839 + 0.0481257332311375138085430129867699012567554089493264665776955969331801173531261130809674894*I
 
 number_of_partitions(50) # Compare with the number of partitions for n = 50.
 
 204226
 
+abs(PMAIN(50)-number_of_partitions(50)).n(digits=6) # |PMAIN(50)-number_of_partitions(50)|
 
-
+0.0505956
 
 
 
