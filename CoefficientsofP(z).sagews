@@ -14,7 +14,7 @@ def I2(n,s): return sum( (K(n,-inverse_mod(s,c),c))/(c*sqrt(s))*bessel_I(3, 4*pi
 
 def I3(n,s): return sum( K(n,-inverse_mod(s,c),c)/(c^4*s^2) for c in (1..1000) if gcd(c,s)==1 and mod(c,6/s)==0)
 
-def a(n):
+def a(n): # Take 1000 terms.
     if n>0:
                      return 2*pi*sum(moebius(s)*I2(n,s) for s in (1,2,3,6))
     elif n==0:
@@ -23,16 +23,16 @@ def a(n):
                      return 2*pi*sum(moebius(s)*I(n,s) for s in (1,2,3,6))
 
 
-(a(0)).n() # Example for n = 0
+(a(0)).n() # Example for n = 0.
 1.59154943114814 - 4.12043597472043e-25*I ≈ 5/pi
 
-(a(1)).n() # Example for n = 1
+(a(1)).n() # Example for n = 1.
 28.9999999891773 - 3.84570191387109e-24*I ≈ 29
 
-(a(-1)).n() # Example for n = -1
+(a(-1)).n() # Example for n = -1.
 -1.00000002025958 + 5.36458444868183e-25*I ≈ -1
 
-(a(-2)).n() # Example for n = -2
+(a(-2)).n() # Example for n = -2.
 -8.49876505942603e-8 + 1.03055054596403e-24*I ≈ 0
 
 
