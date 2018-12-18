@@ -15,11 +15,11 @@ def I2(n,s): return sum( (K(n,-inverse_mod(s,c),c))/(c*sqrt(s))*bessel_I(3, 4*pi
 def I3(n,s): return sum( K(n,-inverse_mod(s,c),c)/(c^4*s^2) for c in (1..1000) if gcd(c,s)==1 and mod(c,6/s)==0)
 
 def a(n): # Take 1000 terms.
-    if n>0:
+    if    n>0:
                      return 2*pi*sum(moebius(s)*I2(n,s) for s in (1,2,3,6))
     elif n==0:
                      return 4*pi^3/3*sum(moebius(s)*I3(n,s) for s in (1,2,3,6))
-    elif n<0:
+    else  n<0:
                      return 2*pi*sum(moebius(s)*I(n,s) for s in (1,2,3,6))
 
 
