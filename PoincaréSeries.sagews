@@ -1,5 +1,6 @@
 ︠#Fourier expansion of F(z) the weight -2 weakly holomorphic modular form for \Gamma_{0}(6).
 
+var('q')
 P.<q> = PolynomialRing(QQ)
 R.<q> = LaurentSeriesRing(P,default_prec=202)
 qexp_eta(ZZ[['q']], 2000)
@@ -18,6 +19,7 @@ F(z) = q^-1 - 10 - 29*q - 104*q^2 - 273*q^3 - 760*q^4 - 1685*q^5 - 4008*q^6 - 83
 
 # Fourier expansion of P(z) the weight 0 weak Maass form for \Gamma_{0}(6).
 
+var('q,pi,y')
 P.<q,pi,y> = PolynomialRing(QQ)
 R.<q> = LaurentSeriesRing(P,default_prec=202)
 
