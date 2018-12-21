@@ -1,4 +1,4 @@
-︠# Fourier expansion of F(z) the weight -2 weakly holomorphic modular form for \Gamma_{0}(6).
+︠#Fourier expansion of F(z) the weight -2 weakly holomorphic modular form for \Gamma_{0}(6).
 
 P.<q> = PolynomialRing(QQ)
 R.<q> = LaurentSeriesRing(P,default_prec=202)
